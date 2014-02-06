@@ -13,10 +13,10 @@ public class Model
 
   public void runTests()
   {
-
+    String students = loadFromTextFiles("students.txt"); //Load Students
   }
 
-  public void loadFromTextFiles(String fileName)
+  public String loadFromTextFiles(String fileName)
   {
     String returnValue = "";
     FileReader file = null;
@@ -39,7 +39,7 @@ public class Model
 	}
       }
     }
-    System.out.println(returnValue);
+    return returnValue;
   } 
 
   public void writeTextFile(String fileName, String s) {

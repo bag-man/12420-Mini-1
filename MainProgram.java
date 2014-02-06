@@ -4,5 +4,6 @@ public class MainProgram
   {
     System.out.println("Hello World!");
     Model newModel = new Model();
+    newModel.runTests();
   }
 }
