@@ -20,7 +20,12 @@ public class Model
   private void parseStudents(String inFile)
   {
     String[] tokens = inFile.split("[\n]");
-    System.out.println(tokens[0]);
+    int i = 0;
+    while(i < tokens[0])
+    {
+      tokens;//Urgh brain
+    }
+      
   }
 
   private String loadFromTextFiles(String fileName)
