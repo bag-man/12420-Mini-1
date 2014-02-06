@@ -14,9 +14,16 @@ public class Model
   public void runTests()
   {
     String students = loadFromTextFiles("students.txt"); //Load Students
+    parseStudents(students);
   }
 
-  public String loadFromTextFiles(String fileName)
+  private void parseStudents(String inFile)
+  {
+    String[] tokens = inFile.split("[\n]");
+    System.out.println(tokens[0]);
+  }
+
+  private String loadFromTextFiles(String fileName)
   {
     String returnValue = "";
     FileReader file = null;
