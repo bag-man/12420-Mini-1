@@ -4,6 +4,5 @@ public class MainProgram
   {
     System.out.println("Hello World!");
     Model newModel = new Model();
-    newModel.loadFromTextFiles("/root/test.txt");
   }
 }
