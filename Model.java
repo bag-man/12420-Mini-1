@@ -4,7 +4,7 @@ import java.io.*;
 public class Model
 {
   private ArrayList<Student> Students = new ArrayList<Student>();
-  private ArrayList<Module> Modules = new ArrayList<Module>()
+  private ArrayList<Module> Modules = new ArrayList<Module>();
 
   public Model()
   {
@@ -15,47 +15,31 @@ public class Model
   {
     String students = loadFromTextFiles("students.txt"); 
     parseStudents(students);
-
-    String modules = loadFromTextFiles("modules.txt"); 
-    parseModules(modules);
-  }
-
-  private void parseModules(String inFile)
-  {
-    String[] tokens = inFile.split("[\n]");
-    int numRecords = Integer.parseInt(tokens[0]);
-    int i = 0;
-
-    while(i < numRecords)
-    {
-      System.out.println("Adding: " + tokens[a] + tokens[b] + tokens[c] + tokens[d]);
-      Students.add(new Student(tokens[a], tokens[b], tokens[c], tokens[d]));
-      i++;
-      a+=4;
-      b+=4;
-      c+=4;
-      d+=4;
-    }
   }
 
   private void parseStudents(String inFile)
   {
+    String uid, sName, fName, degree;
     String[] tokens = inFile.split("[\n]");
     int numRecords = Integer.parseInt(tokens[0]);
+    int recordCount = 1;
     int i = 0;
-    int a = 1;
-    int b = 2;
-    int c = 3;
-    int d = 4;
+
     while(i < numRecords)
     {
-      System.out.println("Adding: " + tokens[a] + tokens[b] + tokens[c] + tokens[d]);
-      Students.add(new Student(tokens[a], tokens[b], tokens[c], tokens[d]));
+      uid = tokens[recordCount];
+      recordCount++;
+      fName = tokens[recordCount]; 
+      recordCount++;
+      sName = tokens[recordCount]; 
+      recordCount++;
+      degree = tokens[recordCount]; 
+      recordCount++;
+
+      System.out.println("Adding: " + uid + sName + fName + degree);
+      Students.add(new Student(uid, sName, fName, degree));
+
       i++;
-      a+=4;
-      b+=4;
-      c+=4;
-      d+=4;
     }
   }
 

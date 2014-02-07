@@ -6,4 +6,4 @@ public class MainProgram
     Model newModel = new Model();
     newModel.runTests();
   }
-}
+} 

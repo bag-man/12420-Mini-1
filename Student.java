@@ -1,8 +1,8 @@
 public class Student
 {
-  private String uid, fName, sName, degree;
+  private String uid, sName, fName, degree;
 
-  public Student(String u, String f, String s, String d)
+  public Student(String u, String s, String f, String d)
   {
     uid = u;
     fName = f;
