@@ -27,6 +27,8 @@ public class Model
 
     while(i < numRecords)
     {
+
+      //There must be a nicer way to do this.
       uid = tokens[recordCount];
       recordCount++;
       fName = tokens[recordCount]; 
