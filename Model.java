@@ -3,8 +3,8 @@ import java.io.*;
 
 public class Model
 {
-  private ArrayList<Student> Students;
-  private ArrayList<Module> Modules;
+  private ArrayList<Student> Students = new ArrayList<Student>();
+  private ArrayList<Module> Modules = new ArrayList<Module>()
 
   public Model()
   {
@@ -28,7 +28,8 @@ public class Model
     int d = 4;
     while(i < numRecords)
     {
-      System.out.println(tokens[a] + tokens[b] + tokens[c] + tokens[d]);
+      System.out.println("Adding: " + tokens[a] + tokens[b] + tokens[c] + tokens[d]);
+      Students.add(new Student(tokens[a], tokens[b], tokens[c], tokens[d]));
       i++;
       a+=4;
       b+=4;
