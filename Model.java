@@ -23,7 +23,10 @@ public class Model
     int i = 0;
     while(i < tokens[0])
     {
-      tokens;//Urgh brain
+      for(int y=0; i++; i=3)
+      {
+	//Create new student
+      }
     }
       
   }
