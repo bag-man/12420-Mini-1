@@ -20,13 +20,16 @@ public class Model
   private void parseStudents(String inFile)
   {
     String[] tokens = inFile.split("[\n]");
+    int numRecords = Integer.parseInt(tokens[0]);
     int i = 0;
-    while(i < tokens[0])
+    while(i < numRecords)
     {
-      for(int y=0; i++; i=3)
+      for(int y=i++;y==i+3; y++) //Doesn't appear to run
       {
+	System.out.println("Here" + tokens[y]);
 	//Create new student
       }
+      i++;
     }
       
   }
