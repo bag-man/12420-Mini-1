@@ -30,7 +30,17 @@ public class Model
       throw new RuntimeException(e);
     }
 
+    printReport();
   }
+
+  private void printReport()
+  {
+    for(int i=0; i < Modules.size();i++)
+    {
+      System.out.println(Modules.get(i));
+    }
+  }
+
 
   private Student findStudent(String u)
   {
@@ -85,14 +95,4 @@ public class Model
 
     file.close();
   } 
-
-  public void printReport()
-  {
-
-  }
-
-  public void findAStudent(String uid) //Will return a Student object
-  {
-
-  }
 }
