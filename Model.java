@@ -24,14 +24,8 @@ public class Model
     int i = 0;
     while(i < numRecords)
     {
-      for(int y=1;y<5; y++) 
-      {
-	System.out.println(tokens[y]);
-	//Create new student
-      }
-      i++;
+      //Read records.... Stupid brain can't figure it out.
     }
-      
   }
 
   private String loadFromTextFiles(String fileName)
