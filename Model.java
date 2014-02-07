@@ -22,9 +22,18 @@ public class Model
     String[] tokens = inFile.split("[\n]");
     int numRecords = Integer.parseInt(tokens[0]);
     int i = 0;
+    int a = 1;
+    int b = 2;
+    int c = 3;
+    int d = 4;
     while(i < numRecords)
     {
-      //Read records.... Stupid brain can't figure it out.
+      System.out.println(tokens[a] + tokens[b] + tokens[c] + tokens[d]);
+      i++;
+      a+=4;
+      b+=4;
+      c+=4;
+      d+=4;
     }
   }
 
