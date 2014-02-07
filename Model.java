@@ -13,8 +13,29 @@ public class Model
 
   public void runTests()
   {
-    String students = loadFromTextFiles("students.txt"); //Load Students
+    String students = loadFromTextFiles("students.txt"); 
     parseStudents(students);
+
+    String modules = loadFromTextFiles("modules.txt"); 
+    parseModules(modules);
+  }
+
+  private void parseModules(String inFile)
+  {
+    String[] tokens = inFile.split("[\n]");
+    int numRecords = Integer.parseInt(tokens[0]);
+    int i = 0;
+
+    while(i < numRecords)
+    {
+      System.out.println("Adding: " + tokens[a] + tokens[b] + tokens[c] + tokens[d]);
+      Students.add(new Student(tokens[a], tokens[b], tokens[c], tokens[d]));
+      i++;
+      a+=4;
+      b+=4;
+      c+=4;
+      d+=4;
+    }
   }
 
   private void parseStudents(String inFile)

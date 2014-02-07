@@ -5,6 +5,11 @@ public class Module
   private String code;
   private ArrayList<Student> enrolledStudents;
 
+  public Module()
+  {
+
+  }
+
   public String toString()
   {
     return code;
