@@ -24,9 +24,9 @@ public class Model
     int i = 0;
     while(i < numRecords)
     {
-      for(int y=1;y==4; y++) //Doesn't appear to run, nor would it work if it did.
+      for(int y=1;y<5; y++) 
       {
-	System.out.println("Here" + tokens[y]);
+	System.out.println(tokens[y]);
 	//Create new student
       }
       i++;
