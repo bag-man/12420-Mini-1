@@ -81,7 +81,6 @@ public class Model
       String fName = file.readLine();
       String degree = file.readLine();
       Students.add(new Student(uid, sName, fName, degree));
-      System.out.println("Adding: " + uid + sName + fName + degree);
     }
 
     file.close();
