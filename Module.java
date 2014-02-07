@@ -3,11 +3,11 @@ import java.util.*;
 public class Module 
 {
   private String code;
-  private ArrayList<Student> enrolledStudents;
+  private ArrayList<Student> enrolledStudents = new ArrayList<Student>();
 
-  public Module()
+  public Module(String c)
   {
-
+    code = c;
   }
 
   public String toString()
@@ -17,6 +17,6 @@ public class Module
 
   public void addThisStudent(Student S)
   {
-
+    enrolledStudents.add(s);  
   }
 }
