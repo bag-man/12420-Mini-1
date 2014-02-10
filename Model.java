@@ -41,7 +41,7 @@ public class Model
       for(int y=0; y < Modules.get(i).getNumStudents(); y++)
       {
         Student currStudent = Modules.get(i).getStudents(y);
-	System.out.println(" -- " + currStudent.toString()); 
+	System.out.println(" -- " + currStudent.toString()); //Get a null pointer at the last record.
       }
     }
   }
