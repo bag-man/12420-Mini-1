@@ -50,12 +50,13 @@ public class Model
   private Student findStudent(String u)
   {
     String uid = u;
-    Student found = null;
+    Student found = null; 
 
     for(int i=0; i < Students.size();i++)
     {
       if(Students.get(i).toString() == uid)
       {
+	System.out.println("Is this running?"); //No. This is the problem I believe.
 	found = Students.get(i);
       }
     }
@@ -76,7 +77,7 @@ public class Model
       for(int y=0; y < numParticipant; y++)
       {
 	String uid = file.readLine();
-	Modules.get(Modules.size()-1).addThisStudent(findStudent(uid)); //Students aren't getting added to modules.
+	Modules.get(Modules.size()-1).addThisStudent(findStudent(uid)); 
       }
     }
 
