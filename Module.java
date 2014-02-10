@@ -17,7 +17,7 @@ public class Module
     return code;
   }
 
-  public void addThisStudent(Student S)
+  public void addThisStudent(Student s)
   {
     enrolledStudents.add(s);  
   }
