@@ -41,7 +41,7 @@ public class Model
       for(int y=0; y < Modules.get(i).getNumStudents(); y++)
       {
         Student currStudent = Modules.get(i).getStudents(y);
-	System.out.println(currStudent.toString()); 
+	System.out.println(" -- " + currStudent.toString()); 
       }
     }
   }
@@ -54,9 +54,8 @@ public class Model
 
     for(int i=0; i < Students.size();i++)
     {
-      if(Students.get(i).toString() == uid)
+      if(Students.get(i).toString().equals(uid))
       {
-	System.out.println("Is this running?"); //No. This is the problem I believe.
 	found = Students.get(i);
       }
     }

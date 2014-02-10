@@ -35,7 +35,6 @@ public class Module
   
   public Student getStudents(int i)
   {
-    System.out.println(enrolledStudents.get(i).getfName());
     return enrolledStudents.get(i);
   }
 
