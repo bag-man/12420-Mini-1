@@ -38,6 +38,11 @@ public class Model
     for(int i=0; i < Modules.size();i++)
     {
       System.out.println(Modules.get(i));
+      for(int y=0; y < Modules.get(i).getNumStudents(); y++)
+      {
+        Student currStudent = Modules.get(i).getStudents(y);
+	System.out.println(currStudent.toString()); //Is currStudent null?
+      }
     }
   }
 

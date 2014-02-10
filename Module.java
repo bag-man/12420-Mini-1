@@ -33,9 +33,14 @@ public class Module
     code = c;
   }
   
-  public ArrayList<Student> getStudents()
+  public Student getStudents(int i)
   {
-    return enrolledStudents;
+    return enrolledStudents.get(i);
+  }
+
+  public int getNumStudents()
+  {
+    return enrolledStudents.size();
   }
 
   public void setStudents(ArrayList<Student> s)
