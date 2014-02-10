@@ -41,7 +41,7 @@ public class Model
       for(int y=0; y < Modules.get(i).getNumStudents(); y++)
       {
         Student currStudent = Modules.get(i).getStudents(y);
-	System.out.println(currStudent.toString()); //Is currStudent null?
+	System.out.println(currStudent.toString()); 
       }
     }
   }
@@ -76,7 +76,7 @@ public class Model
       for(int y=0; y < numParticipant; y++)
       {
 	String uid = file.readLine();
-	Modules.get(Modules.size()-1).addThisStudent(findStudent(uid));
+	Modules.get(Modules.size()-1).addThisStudent(findStudent(uid)); //Students aren't getting added to modules.
       }
     }
 
