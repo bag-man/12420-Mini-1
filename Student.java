@@ -1,4 +1,4 @@
-public class Student
+public class Student implements java.io.Serializable
 {
   private String uid, sName, fName, degree;
 

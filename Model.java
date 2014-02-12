@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Model
+public class Model implements java.io.Serializable
 {
   private ArrayList<Student> Students = new ArrayList<Student>();
   private ArrayList<Module> Modules = new ArrayList<Module>();
@@ -31,6 +31,31 @@ public class Model
     }
 
     printReport();
+ 
+    try {
+      saveSerial();
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  //http://www.tutorialspoint.com/java/java_serialization.htm
+  private void loadSerial() throws IOException
+  {
+    FileInputStream fileIn = new FileInputStream("saveFile");
+    ObjectInputStream in = new ObjectInputStream(fileIn);
+    e = (Employee) in.readObject();
+    in.close();
+    fileIn.close();
+  }
+
+  private void saveSerial() throws IOException
+  {
+    FileOutputStream fileOut = new FileOutputStream("saveFile.dat");
+    ObjectOutputStream out = new ObjectOutputStream(fileOut);
+    out.writeObject(this);
+    out.close();
+    fileOut.close();
   }
 
   private void printReport()

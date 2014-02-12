@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Module 
+public class Module implements java.io.Serializable
 {
   private String code;
   private ArrayList<Student> enrolledStudents = new ArrayList<Student>();
