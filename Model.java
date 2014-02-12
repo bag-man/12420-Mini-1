@@ -41,26 +41,23 @@ public class Model
       for(int y=0; y < Modules.get(i).getNumStudents(); y++)
       {
         Student currStudent = Modules.get(i).getStudents(y);
-	System.out.println(" -- " + currStudent.toString()); //Get a null pointer at the last record.
+	System.out.println(" -- " + currStudent.toString()); 
       }
     }
   }
-
 
   private Student findStudent(String u)
   {
-    String uid = u;
-    Student found = null; 
-
-    for(int i=0; i < Students.size();i++)
+    for(Student s : Students)
     {
-      if(Students.get(i).toString().equals(uid))
+      if(s.toString().equals(u))
       {
-	found = Students.get(i);
+	return s;
       }
     }
-    return found;
-  }
+    System.out.println(u + " Not found"); //WHY isn't it found
+    return null;
+  } 
 
   private void loadModules(String fileName) throws IOException
   {
