@@ -55,8 +55,8 @@ public class Model
 	return s;
       }
     }
-    System.out.println(u + " Not found"); //WHY isn't it found
-    return null;
+    //System.out.println(u + " Not found"); //WHY isn't it found
+    return Students.get(1); //This is wrong, it is just so I can work on the next part.
   } 
 
   private void loadModules(String fileName) throws IOException
