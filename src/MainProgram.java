@@ -6,6 +6,7 @@ public class MainProgram
   {
     Model newModel = new Model();
 
+    System.out.println("Loading Students...");
     try {
       newModel.loadStudents("students.txt"); 
     } catch(FileNotFoundException e) {
@@ -14,6 +15,7 @@ public class MainProgram
       throw new RuntimeException(e);
     }
 
+    System.out.println("Loading Modules...");
     try {
       newModel.loadModules("modules.txt"); 
     } catch(FileNotFoundException e) {
@@ -22,18 +24,23 @@ public class MainProgram
       throw new RuntimeException(e);
     }
 
+    System.out.println("Printing report...");
     newModel.printReport();
  
+    System.out.println("Saving data to Serial File...");
     try {
       newModel.saveSerial();
     } catch(IOException e) {
       throw new RuntimeException(e);
     }
  
+    System.out.println("Deleting student from first module...");
     newModel.deleteStudent();
 
+    System.out.println("Printing report...");
     newModel.printReport();
     
+    System.out.println("Loading data from Serial File...");
     try {
       newModel = newModel.loadSerial();
     } catch(IOException e) {
@@ -42,24 +49,30 @@ public class MainProgram
       throw new RuntimeException(c);
     }
 
+    System.out.println("Printing report...");
     newModel.printReport();
 
+    System.out.println("Saving data to XML File...");
     try {
       newModel.writeXML();
     } catch(IOException e) {
       throw new RuntimeException(e);
     } 
 
+    System.out.println("Deleting student from first module...");
     newModel.deleteStudent();
 
+    System.out.println("Printing report...");
     newModel.printReport();
 
+    System.out.println("Loading data from XML File...");
     try {
       newModel = newModel.readXML();
     } catch(IOException e) {
       throw new RuntimeException(e);
     } 
 
+    System.out.println("Printing report...");
     newModel.printReport();
   }
 

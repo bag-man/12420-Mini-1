@@ -59,6 +59,7 @@ public class Model implements java.io.Serializable
 	System.out.println(" -- " + currStudent.toString()); 
       }
     }
+    System.out.println();
   }
 
   private Student findStudent(String u)
