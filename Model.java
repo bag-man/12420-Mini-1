@@ -39,7 +39,6 @@ public class Model implements java.io.Serializable
     }
   }
 
-  /*
   //http://www.tutorialspoint.com/java/java_serialization.htm
   private void loadSerial() throws IOException
   {
@@ -49,7 +48,6 @@ public class Model implements java.io.Serializable
     in.close();
     fileIn.close();
   }
-  */
 
   private void saveSerial() throws IOException
   {
@@ -75,16 +73,14 @@ public class Model implements java.io.Serializable
 
   private Student findStudent(String u)
   {
-    Student found = null;
     for(Student s : Students)
     {
       if(s.toString().equals(u))
       {
-        found = s;
-	return found;
+	return s;
       }
     }
-    return found;
+    return null;
   } 
 
   private void loadModules(String fileName) throws IOException
