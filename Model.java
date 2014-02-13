@@ -11,65 +11,22 @@ public class Model implements java.io.Serializable
 
   }
 
-  public void runTests()
+  public void deleteStudent()
   {
-
-    try {
-      loadStudents("students.txt"); 
-    } catch(FileNotFoundException e) {
-      System.out.println("students.txt not found!");
-    } catch(IOException e) {
-      throw new RuntimeException(e);
-    }
-
-    try {
-      loadModules("modules.txt"); 
-    } catch(FileNotFoundException e) {
-      System.out.println("modules.txt not found!");
-    } catch(IOException e) {
-      throw new RuntimeException(e);
-    }
-
-    printReport();
- 
-    try {
-      saveSerial();
-    } catch(IOException e) {
-      throw new RuntimeException(e);
-    }
-
-    //Delete a student from the first module
     Modules.get(0).deleteStudent();
-    System.out.println();
-    printReport();
-
-    try {
-      loadSerial();
-    } catch(IOException e) {
-      throw new RuntimeException(e);
-    } catch(ClassNotFoundException c) {
-      throw new RuntimeException(c);
-    }
-
-    System.out.println();
-    printReport();
   }
 
-
-
-  //http://www.tutorialspoint.com/java/java_serialization.htm
-  private void loadSerial() throws IOException, ClassNotFoundException
+  public Model loadSerial() throws IOException, ClassNotFoundException
   {
-    Model m = null;
     FileInputStream fileIn = new FileInputStream("saveFile.dat");
     ObjectInputStream in = new ObjectInputStream(fileIn);
-    m = (Model) in.readObject();
+    Model newModel = (Model) in.readObject();
     in.close();
     fileIn.close();
+    return newModel;
   }
 
-  //http://www.tutorialspoint.com/java/java_serialization.htm
-  private void saveSerial() throws IOException
+  public void saveSerial() throws IOException
   {
     FileOutputStream fileOut = new FileOutputStream("saveFile.dat");
     ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -78,8 +35,9 @@ public class Model implements java.io.Serializable
     fileOut.close();
   }
 
-  private void printReport()
+  public void printReport()
   {
+    System.out.println();
     for(int i=0; i < Modules.size();i++)
     {
       System.out.println(Modules.get(i));
@@ -103,7 +61,7 @@ public class Model implements java.io.Serializable
     return null;
   } 
 
-  private void loadModules(String fileName) throws IOException
+  public void loadModules(String fileName) throws IOException
   {
     BufferedReader file = new BufferedReader(new FileReader(fileName));
     int numRecords = Integer.parseInt(file.readLine());
@@ -124,8 +82,7 @@ public class Model implements java.io.Serializable
     file.close();
   } 
 
-
-  private void loadStudents(String fileName) throws IOException
+  public void loadStudents(String fileName) throws IOException
   {
     BufferedReader file = new BufferedReader(new FileReader(fileName));
     int numRecords = Integer.parseInt(file.readLine());
