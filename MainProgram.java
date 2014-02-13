@@ -44,5 +44,18 @@ public class MainProgram
     }
 
     newModel.printReport();
+
+    try {
+      newModel.writeXML();
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    } 
+
+    try {
+      newModel = newModel.readXML();
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    } 
   }
+
 } 

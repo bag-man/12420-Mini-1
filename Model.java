@@ -1,10 +1,27 @@
 import java.util.*;
 import java.io.*;
+import java.beans.XMLEncoder;
+import java.beans.XMLDecoder;
 
 public class Model implements java.io.Serializable
 {
   private ArrayList<Student> students = new ArrayList<Student>();
   private ArrayList<Module> modules = new ArrayList<Module>();
+
+  public void writeXML() throws IOException
+  {
+    XMLEncoder encoder = new XMLEncoder(new BufferedOutputStream(new FileOutputStream("data.xml")));
+    encoder.writeObject(this);
+    encoder.close();
+  }
+
+  public static Model readXML() throws IOException
+  {
+    Model result = null;
+    XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream("data.xml")));
+    result = (Model) decoder.readObject();
+    return result;
+  }
 
   public void deleteStudent()
   {
