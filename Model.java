@@ -38,7 +38,10 @@ public class Model implements java.io.Serializable
       throw new RuntimeException(e);
     }
 
-    deleteStudent();
+    //Delete a student from the first module
+    Modules.get(0).deleteStudent();
+    System.out.println();
+    printReport();
 
     try {
       loadSerial();
@@ -48,16 +51,11 @@ public class Model implements java.io.Serializable
       throw new RuntimeException(c);
     }
 
+    System.out.println();
     printReport();
   }
 
 
-  private void deleteStudent()
-  {
-    //Need to actuall make this work
-    int lastStudent = Students.size()-1;
-    Students.remove(lastStudent);
-  }
 
   //http://www.tutorialspoint.com/java/java_serialization.htm
   private void loadSerial() throws IOException, ClassNotFoundException

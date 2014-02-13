@@ -22,6 +22,12 @@ public class Module implements java.io.Serializable
     enrolledStudents.add(s);  
   }
 
+  public void deleteStudent()
+  {
+    int lastStudent = enrolledStudents.size()-1;
+    enrolledStudents.remove(lastStudent);
+  }
+
   //Getters and setters for bean, this might be wrong.
   public String getCode()
   {
