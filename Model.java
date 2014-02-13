@@ -3,12 +3,12 @@ import java.io.*;
 
 public class Model implements java.io.Serializable
 {
-  private ArrayList<Student> Students = new ArrayList<Student>();
-  private ArrayList<Module> Modules = new ArrayList<Module>();
+  private ArrayList<Student> students = new ArrayList<Student>();
+  private ArrayList<Module> modules = new ArrayList<Module>();
 
   public void deleteStudent()
   {
-    Modules.get(0).deleteStudent();
+    modules.get(0).deleteStudent();
   }
 
   public Model loadSerial() throws IOException, ClassNotFoundException
@@ -33,12 +33,12 @@ public class Model implements java.io.Serializable
   public void printReport()
   {
     System.out.println();
-    for(int i=0; i < Modules.size();i++)
+    for(int i=0; i < modules.size();i++)
     {
-      System.out.println(Modules.get(i));
-      for(int y=0; y < Modules.get(i).getNumStudents(); y++)
+      System.out.println(modules.get(i));
+      for(int y=0; y < modules.get(i).getNumStudents(); y++)
       {
-        Student currStudent = Modules.get(i).getStudents(y);
+        Student currStudent = modules.get(i).getStudents(y);
 	System.out.println(" -- " + currStudent.toString()); 
       }
     }
@@ -46,7 +46,7 @@ public class Model implements java.io.Serializable
 
   private Student findStudent(String u)
   {
-    for(Student s : Students)
+    for(Student s : students)
     {
       if(s.toString().equals(u))
       {
@@ -64,13 +64,13 @@ public class Model implements java.io.Serializable
     for(int i=0; i < numRecords; i++)
     {
       String code = file.readLine();
-      Modules.add(new Module(code));
+      modules.add(new Module(code));
 
       int numParticipant = Integer.parseInt(file.readLine());
       for(int y=0; y < numParticipant; y++)
       {
 	String uid = file.readLine();
-	Modules.get(Modules.size()-1).addThisStudent(findStudent(uid)); 
+	modules.get(modules.size()-1).addThisStudent(findStudent(uid)); 
       }
     }
 
@@ -88,7 +88,7 @@ public class Model implements java.io.Serializable
       String sName = file.readLine();
       String fName = file.readLine();
       String degree = file.readLine();
-      Students.add(new Student(uid, sName, fName, degree));
+      students.add(new Student(uid, sName, fName, degree));
     }
 
     file.close();
