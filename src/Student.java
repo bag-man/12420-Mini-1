@@ -17,37 +17,44 @@ public class Student implements java.io.Serializable
     return uid;
   }
 
-//Auto generated getters/setters
-public String getUid() {
-	return uid;
-}
+  //Auto generated getters/setters
+  public String getUid() 
+  {
+      return uid;
+  }
 
-public void setUid(String uid) {
-	this.uid = uid;
-}
+  public void setUid(String uid) 
+  {
+    this.uid = uid;
+  }
 
-public String getSName() {
-	return sName;
-}
+  public String getSName() 
+  {
+    return sName;
+  }
 
-public void setsName(String sName) {
-	this.sName = sName;
-}
+  public void setsName(String sName) 
+  {
+    this.sName = sName;
+  }
 
-public String getFName() {
-	return fName;
-}
+  public String getFName() 
+  {
+    return fName;
+  }
 
-public void setfName(String fName) {
-	this.fName = fName;
-}
+  public void setfName(String fName) 
+  {
+    this.fName = fName;
+  }
 
-public String getDegree() {
-	return degree;
-}
+  public String getDegree() 
+  {
+    return degree;
+  }
 
-public void setDegree(String degree) {
-	this.degree = degree;
-}
-
+  public void setDegree(String degree) 
+  {
+    this.degree = degree;
+  }
 }

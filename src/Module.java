@@ -38,22 +38,25 @@ public class Module implements java.io.Serializable
     return enrolledStudents.get(i);
   }
 
+  //Auto generated getters/setters
+  public String getCode() 
+  {
+    return code;
+  }
 
-//Auto generated getters/setters
-public String getCode() {
-	return code;
-}
+  public void setCode(String code) 
+  {
+    this.code = code;
+  }
 
-public void setCode(String code) {
-	this.code = code;
-}
+  public ArrayList<Student> getEnrolledStudents() 
+  {
+    return enrolledStudents;
+  }
 
-public ArrayList<Student> getEnrolledStudents() {
-	return enrolledStudents;
-}
-
-public void setEnrolledStudents(ArrayList<Student> enrolledStudents) {
-	this.enrolledStudents = enrolledStudents;
-}
+  public void setEnrolledStudents(ArrayList<Student> enrolledStudents) 
+  {
+    this.enrolledStudents = enrolledStudents;
+  }
 
 }
