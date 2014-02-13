@@ -38,6 +38,8 @@ public class Model implements java.io.Serializable
       throw new RuntimeException(e);
     }
 
+    deleteStudent();
+
     try {
       loadSerial();
     } catch(IOException e) {
@@ -45,6 +47,16 @@ public class Model implements java.io.Serializable
     } catch(ClassNotFoundException c) {
       throw new RuntimeException(c);
     }
+
+    printReport();
+  }
+
+
+  private void deleteStudent()
+  {
+    //Need to actuall make this work
+    int lastStudent = Students.size()-1;
+    Students.remove(lastStudent);
   }
 
   //http://www.tutorialspoint.com/java/java_serialization.htm
@@ -58,6 +70,7 @@ public class Model implements java.io.Serializable
     fileIn.close();
   }
 
+  //http://www.tutorialspoint.com/java/java_serialization.htm
   private void saveSerial() throws IOException
   {
     FileOutputStream fileOut = new FileOutputStream("saveFile.dat");
