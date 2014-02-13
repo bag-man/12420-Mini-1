@@ -6,11 +6,6 @@ public class Model implements java.io.Serializable
   private ArrayList<Student> Students = new ArrayList<Student>();
   private ArrayList<Module> Modules = new ArrayList<Module>();
 
-  public Model()
-  {
-
-  }
-
   public void deleteStudent()
   {
     Modules.get(0).deleteStudent();
