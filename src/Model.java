@@ -15,7 +15,7 @@ public class Model implements java.io.Serializable
     encoder.close();
   }
 
-  public static Model readXML() throws IOException
+  public Model readXML() throws IOException
   {
     Model result = null;
     XMLDecoder decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream("data.xml")));
@@ -109,5 +109,22 @@ public class Model implements java.io.Serializable
     }
 
     file.close();
-  } 
+  }
+
+//Auto generated getters/setters
+public ArrayList<Student> getStudents() {
+	return students;
+}
+
+public void setStudents(ArrayList<Student> students) {
+	this.students = students;
+}
+
+public ArrayList<Module> getModules() {
+	return modules;
+}
+
+public void setModules(ArrayList<Module> modules) {
+	this.modules = modules;
+} 
 }

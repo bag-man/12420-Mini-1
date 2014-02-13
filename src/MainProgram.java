@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.*;
 
 public class MainProgram
 {
@@ -51,11 +50,17 @@ public class MainProgram
       throw new RuntimeException(e);
     } 
 
+    newModel.deleteStudent();
+
+    newModel.printReport();
+
     try {
       newModel = newModel.readXML();
     } catch(IOException e) {
       throw new RuntimeException(e);
     } 
+
+    newModel.printReport();
   }
 
 } 

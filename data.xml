@@ -1,4 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="1.7.0_45" class="java.beans.XMLDecoder">
- <object class="Model"/>
+ <object class="Model">
+  <void property="modules">
+   <void method="add">
+    <object class="Module">
+     <void property="code">
+      <string>CS10110</string>
+     </void>
+     <void property="enrolledStudents">
+      <void method="add">
+       <object class="Student" id="Student0">
+        <void property="degree">
+         <string>G400</string>
+        </void>
+        <void property="uid">
+         <string>fyb9</string>
+        </void>
+       </object>
+      </void>
+      <void method="add">
+       <object class="Student" id="Student1">
+        <void property="degree">
+         <string>G600 </string>
+        </void>
+        <void property="uid">
+         <string>lfr8</string>
+        </void>
+       </object>
+      </void>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Module">
+     <void property="code">
+      <string>CS10310</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Module">
+     <void property="code">
+      <string>CS12130</string>
+     </void>
+     <void property="enrolledStudents">
+      <void method="add">
+       <object idref="Student0"/>
+      </void>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Module">
+     <void property="code">
+      <string>CS12230</string>
+     </void>
+     <void property="enrolledStudents">
+      <void method="add">
+       <object idref="Student1"/>
+      </void>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="Module">
+     <void property="code">
+      <string>CS10610</string>
+     </void>
+     <void property="enrolledStudents">
+      <void method="add">
+       <object idref="Student0"/>
+      </void>
+      <void method="add">
+       <object idref="Student1"/>
+      </void>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="students">
+   <void method="add">
+    <object idref="Student0"/>
+   </void>
+   <void method="add">
+    <object idref="Student1"/>
+   </void>
+  </void>
+ </object>
 </java>

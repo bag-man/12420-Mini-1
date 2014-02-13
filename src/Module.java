@@ -28,15 +28,9 @@ public class Module implements java.io.Serializable
     enrolledStudents.remove(lastStudent);
   }
 
-  //Getters and setters for bean, this might be wrong.
-  public String getCode()
+  public int getNumStudents()
   {
-    return code;
-  }
-
-  public void setCode(String c)
-  {
-    code = c;
+    return enrolledStudents.size();
   }
   
   public Student getStudents(int i)
@@ -44,14 +38,22 @@ public class Module implements java.io.Serializable
     return enrolledStudents.get(i);
   }
 
-  public int getNumStudents()
-  {
-    return enrolledStudents.size();
-  }
 
-  public void setStudents(ArrayList<Student> s)
-  {
-    enrolledStudents = s;
-  }
+//Auto generated getters/setters
+public String getCode() {
+	return code;
+}
+
+public void setCode(String code) {
+	this.code = code;
+}
+
+public ArrayList<Student> getEnrolledStudents() {
+	return enrolledStudents;
+}
+
+public void setEnrolledStudents(ArrayList<Student> enrolledStudents) {
+	this.enrolledStudents = enrolledStudents;
+}
 
 }
