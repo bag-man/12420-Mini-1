@@ -37,14 +37,23 @@ public class Model implements java.io.Serializable
     } catch(IOException e) {
       throw new RuntimeException(e);
     }
+
+    try {
+      loadSerial();
+    } catch(IOException e) {
+      throw new RuntimeException(e);
+    } catch(ClassNotFoundException c) {
+      throw new RuntimeException(c);
+    }
   }
 
   //http://www.tutorialspoint.com/java/java_serialization.htm
-  private void loadSerial() throws IOException
+  private void loadSerial() throws IOException, ClassNotFoundException
   {
-    FileInputStream fileIn = new FileInputStream("saveFile");
+    Model m = null;
+    FileInputStream fileIn = new FileInputStream("saveFile.dat");
     ObjectInputStream in = new ObjectInputStream(fileIn);
-    e = (Employee) in.readObject();
+    m = (Model) in.readObject();
     in.close();
     fileIn.close();
   }
